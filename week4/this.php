@@ -7,13 +7,19 @@ class Car {
     }
 
     public function Mengendarai ($jarak){
-        $this->Tanki -= $jarak / 10;
+        $this->Tanki -= $jarak / 80;
+        if ($this->Tanki < 0) {
+            $this->Tanki = "Mogok Bre";
+        }
+        if ($this->Tanki > 0) {
+            $this->Tanki = $this->Tanki;
+        }
     }
 }
 
 $car = new Car();
-$car->IsiBensin(100);
-$car->Mengendarai(100);
-echo "Isi tanki: " . $car->Tanki . " liter";
+$car->IsiBensin(10);
+$car->Mengendarai(1000);
+echo "Sisa Bensin : " . $car->Tanki . "";
 
 ?>
